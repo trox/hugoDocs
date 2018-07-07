@@ -284,7 +284,19 @@ ln -sf $(pwd) src/github.com/gohugoio/hugo
 
 # set the build path for Go
 export GOPATH=$(pwd)
+```
 
+You'll need to do some extra magic to make the go get working on mac OS X as per https://stackoverflow.com/questions/18149601/go-install-always-fails-no-install-directory-outside-gopath
+
+```
+export GOPATH=$HOME
+
+mkdir bin 
+export GOBIN=$GOPATH/bin
+```
+Now you're ready for
+
+```
 go get
 ```
 
